@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="title">📝 All Tasks</h2>
+
+{% for task in tasks %}
+
+    <div class="all-task-card {% if task.completed %}completed{% endif %}">
+
+        <div>
+
+            <h3>{{ task.title }}</h3>
+
+            <p>
+                📚 {{ task.course.name }}
+            </p>
+
+        </div>
+
+        <div>
+
+            📅 {{ task.due_date.strftime("%d %b %Y") }}
+
+            {% if task.completed %}
+
+                <span class="task-status completed-status">
+                    ✅ Completed
+                </span>
+
+            {% else %}
+
+                <span class="task-status pending-status">
+                    ⏳ Pending
+                </span>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+{% else %}
+
+    <div class="empty-message">
+
+        <h3>No tasks yet! ✅</h3>
+
+        <p>Start by adding your first task.</p>
+
+    </div>
+
+{% endfor %}
+
+{% endblock %}

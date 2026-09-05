@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <h2 class="title">📚 Add New Course</h2>
+
+    <p class="subtitle">
+        Create a new course to organize your study.
+    </p>
+
+    <form method="POST">
+
+        <div class="form-group">
+
+            <label>Course Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter course name"
+                required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Course Color</label>
+
+            <input
+                type="color"
+                name="color">
+
+        </div>
+
+        <button class="btn green">
+
+            ➕ Add Course
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

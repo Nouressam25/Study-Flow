@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h2 class="title">✅ Completed Tasks</h2>
+
+</div>
+
+<div class="completed-tasks-list">
+
+    {% for task in tasks %}
+
+        <div class="completed-task-card">
+
+            <div>
+
+                <h3>{{ task.title }}</h3>
+
+                <p>
+                    📚 {{ task.course.name }}
+                </p>
+
+            </div>
+
+            <span class="completed-label">
+                ✅ Completed
+            </span>
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-message">
+
+            <h3>No completed tasks yet! 📝</h3>
+
+            <p>Complete some tasks and they will appear here.</p>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

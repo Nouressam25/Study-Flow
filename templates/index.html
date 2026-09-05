@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="home-container">
+
+    <h1>📚 StudyFlow</h1>
+
+    <p>
+        Organize your courses, manage your study tasks,
+        and track your progress with ease.
+    </p>
+
+    <div class="buttons">
+
+        <a class="btn blue"
+            href="{{ url_for('courses') }}">
+            📖 View My Courses
+        </a>
+
+        <a class="btn green"
+            href="{{ url_for('add_course') }}">
+            ➕ Add New Course
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
